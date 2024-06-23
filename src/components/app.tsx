@@ -9,3 +9,4 @@ function App({ placesCount }: MainParams): JSX.Element {
 }
 
 export default App;
+
