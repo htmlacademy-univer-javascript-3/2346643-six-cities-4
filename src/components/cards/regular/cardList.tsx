@@ -12,7 +12,7 @@ export default function OfferList({ offers }: OfferListProps) {
   return (
     <div className="cities__places-list places__list tabs__content">
       {offers.map((offer) =>
-          <OfferCard onMouseOver={setActiveCard} offer={offer} key={offer.id + activeCardId * 0} />)};
-  </div>
-);
+        <OfferCard onMouseOver={setActiveCard} offer={offer} key={offer.id + activeCardId * 0} />)};
+    </div>
+  );
 }
