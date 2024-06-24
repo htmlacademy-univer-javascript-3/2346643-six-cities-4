@@ -1,7 +1,7 @@
 import './404.css';
 
 import { useNavigate } from 'react-router-dom';
-import { PageRoutes } from '../../constants';
+import { PageRoutes } from '../../constant/consts';
 import { useCallback, useEffect } from 'react';
 
 
@@ -25,7 +25,11 @@ function NotFoundPage() {
       <div className='container404'>
         <span className="title">404 Not Found</span>
         <p>
-  Error 404: Page not found.<br />
+          A wild 404-PAGE appeared!<br />
+          This means that your browser was able to communicate with your given server, but the server could not find
+          what was requested.<br /><br />
+          * Make sure the url is correct.<br />
+          * Don&apos;t panic.
         </p>
         <div>Press Enter to continue _</div>
       </div>
