@@ -11,7 +11,7 @@ export default function useMap(
 
   useEffect(() => {
     if (mapRef.current !== null && !isRenderedRef.current) {
-      const instance = new Map(mapRef.current!, {
+      const instance = new Map(mapRef.current, {
         center: {
           lat: offer.city.location.latitude,
           lng: offer.city.location.longitude,
