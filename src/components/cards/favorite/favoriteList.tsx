@@ -1,8 +1,8 @@
-import { Offer } from '../../../constant/types';
+import { OfferType } from '../../../constant/types';
 import FavoriteCard from './favoriteCard';
 
 export type OfferListProps = {
-  offers: Offer[];
+  offers: OfferType[];
 }
 
 export default function FavoritesList({ offers }: OfferListProps) {
@@ -10,7 +10,7 @@ export default function FavoritesList({ offers }: OfferListProps) {
   return (
     <div className="favorites__places">
       {offers.map((offer) =>
-        <FavoriteCard offer={offer} key={offer.id} />)};
+        <FavoriteCard offer={offer} key={offer.id} />)}
     </div>
   );
 }
