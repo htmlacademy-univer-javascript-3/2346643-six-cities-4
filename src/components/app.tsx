@@ -9,10 +9,10 @@ import OfferPage from '../pages/offer';
 import NotFoundPage from '../pages/404/404';
 import PrivateRoute from './private-route';
 import reviews from '../mocks/reviews';
-import { Offer } from '../constant/types';
+import { OfferType } from '../constant/types';
 
 export type AppProps = {
-  offers: Offer[];
+  offers: OfferType[];
 }
 
 function App({ offers }: AppProps): JSX.Element {
