@@ -12,11 +12,11 @@ export type OfferCardParams = {
 export default function OfferCard({ offer, onMouseOver, isMainScreen }: OfferCardParams): JSX.Element {
   return (
     <article className={isMainScreen ? 'cities__card place-card' : 'near-places__card place-card'}
-             id={offer.id.toString()}
-             onMouseOver={(evt) => {
-               const target = evt.currentTarget as HTMLElement;
-               onMouseOver(+target.id);
-             }}
+      id={offer.id.toString()}
+      onMouseOver={(evt) => {
+        const target = evt.currentTarget as HTMLElement;
+        onMouseOver(+target.id);
+      }}
     >
       {
         (offer.isPremium && isMainScreen) ? (
