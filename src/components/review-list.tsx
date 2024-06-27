@@ -2,7 +2,7 @@ import { ReviewType } from '../constant/types';
 import Review from './review';
 
 type ReviewListProps = {
-    reviews: ReviewType[];
+  reviews: ReviewType[];
 }
 
 export default function ReviewsList({ reviews }: ReviewListProps): JSX.Element {
