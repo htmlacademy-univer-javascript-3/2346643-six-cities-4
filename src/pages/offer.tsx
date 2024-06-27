@@ -165,7 +165,7 @@ export default function OfferScreen(): JSX.Element {
                 <ReviewsList reviews={reviews} />
                 {
                   authStatus === AuthStatus.Auth &&
-                    <ReviewForm id={offerInfo.id} />
+                  <ReviewForm id={offerInfo.id} />
                 }
               </section>
             </div>

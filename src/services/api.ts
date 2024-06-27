@@ -4,6 +4,7 @@ import { StatusCodes } from 'http-status-codes';
 import { processErrorHandle } from './handle-api-error';
 import { getToken } from './token';
 
+
 type DetailMessageType = {
   type: string;
   message: string;

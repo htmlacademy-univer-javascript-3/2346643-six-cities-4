@@ -18,6 +18,7 @@ export default function FavoriteCard({ offer }: FavoriteCardParams): JSX.Element
     setFavoriteOffer(!isFavoriteOffer);
   };
 
+
   return (
     <article className="favorites__card place-card">
       <div className="favorites__image-wrapper place-card__image-wrapper">
