@@ -1,19 +1,19 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from './hooks';
+import { useAppDispatch, useAppSelector } from '../hooks';
 
-import { AuthStatus, PageRoutes } from './constant/consts';
+import { AuthStatus, PageRoutes } from '../constant/consts';
 
-import FavoritesPage from './pages/favorites';
-import LoginPage from './pages/login';
-import OfferPage from './pages/offer';
-import NotFoundPage from './pages/404/404';
-import PrivateRoute from './components/private-route';
-import MainPage from './pages/main';
-import LoadingPage from './pages/loading/loading';
-import { getFilteredOffers } from './store/offer-reducers/offer/selectors';
-import { getAuthStatus } from './store/user-reducer/selectors';
-import { getLoadingStatus } from './store/app-reducer/selectors';
-import { fetchFavoriteOffersAction } from './store/api-actions';
+import FavoritesPage from '../pages/favorites';
+import LoginPage from '../pages/login';
+import OfferPage from '../pages/offer';
+import NotFoundPage from '../pages/404/404';
+import PrivateRoute from './private-route';
+import MainPage from '../pages/main';
+import LoadingPage from '../pages/loading/loading';
+import { getFilteredOffers } from '../store/offer-reducers/offer/selectors';
+import { getAuthStatus } from '../store/user-reducer/selectors';
+import { getLoadingStatus } from '../store/app-reducer/selectors';
+import { fetchFavoriteOffersAction } from '../store/api-actions';
 import { useEffect } from 'react';
 
 function App(): JSX.Element {
