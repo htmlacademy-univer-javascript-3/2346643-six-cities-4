@@ -2,7 +2,7 @@ import { OfferType } from '../../../constant/types';
 import FavoriteCard from './favorite-card';
 
 export type OfferListProps = {
-  offers: OfferType[];
+    offers: OfferType[];
 }
 
 export default function FavoritesList({ offers }: OfferListProps): JSX.Element {

@@ -2,9 +2,9 @@ import { OfferType } from '../../../constant/types';
 import OfferCard from './offer-card';
 
 type OfferListProps = {
-  offers: OfferType[];
-  setActiveCard: (id: string) => void;
-  isMainScreen: boolean;
+    offers: OfferType[];
+    setActiveCard: (id: string) => void;
+    isMainScreen: boolean;
 }
 
 export default function OfferList({ offers, setActiveCard, isMainScreen }: OfferListProps): JSX.Element {

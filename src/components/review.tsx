@@ -2,7 +2,7 @@ import { ReviewType } from '../constant/types';
 import { getStarsFromRating } from '../constant/utils';
 
 type ReviewProps = {
-  review: ReviewType;
+    review: ReviewType;
 }
 
 export default function Review({review}: ReviewProps): JSX.Element {

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { SortBy } from '../constant/consts';
 
 type SortByFormProps = {
-  onClick(value: SortBy): void;
-  sortByCurrent: SortBy;
+    onClick(value: SortBy): void;
+    sortByCurrent: SortBy;
 }
 
 export default function SortByForm({onClick, sortByCurrent}: SortByFormProps): JSX.Element {
