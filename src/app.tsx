@@ -1,18 +1,18 @@
 import { Route, Routes } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../hooks';
-import { AuthStatus, PageRoutes } from '../constant/consts';
-import FavoritesPage from '../pages/favorites';
-import LoginPage from '../pages/login';
-import OfferPage from '../pages/offer';
-import NotFoundPage from '../pages/404/404';
-import PrivateRoute from './private-route';
-import MainPage from '../pages/main';
-import { getAuthStatus } from '../store/user-reducer/selectors';
-import { fetchFavoriteOffersAction } from '../store/api-actions';
+import { useAppDispatch, useAppSelector } from './hooks';
+import { AuthStatus, PageRoutes } from './constant/consts';
+import FavoritesPage from './pages/favorites';
+import LoginPage from './pages/login';
+import OfferPage from './pages/offer';
+import NotFoundPage from './pages/404/404';
+import PrivateRoute from './components/private-route';
+import MainPage from './pages/main';
+import { getAuthStatus } from './store/user-reducer/selectors';
+import { fetchFavoriteOffersAction } from './store/api-actions';
 import { useEffect } from 'react';
-import PublicRoute from './public-route';
-import HistoryRouter from './history-router';
-import browserHistory from '../services/browser-history';
+import PublicRoute from './components/public-route';
+import HistoryRouter from './components/history-router';
+import browserHistory from './services/browser-history';
 
 export default function App(): JSX.Element {
   const dispatch = useAppDispatch();
