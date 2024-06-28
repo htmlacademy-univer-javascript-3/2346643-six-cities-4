@@ -11,7 +11,9 @@ export const fetchOffersAction = createAsyncThunk<OfferType[], undefined, {
   dispatch: AppDispatch;
   state: State;
   extra: AxiosInstance;
-}>('fetchOffers', async (_arg, { extra: api }) => {
+}>(
+  'fetchOffers',
+  async (_arg, { extra: api }) => {
     const { data } = await api.get<OfferType[]>(APIRoutes.Offers);
     return data;
   },
@@ -21,12 +23,14 @@ export const fetchOfferByIDAction = createAsyncThunk<SelectedOfferType, { id: st
   dispatch: AppDispatch;
   state: State;
   extra: AxiosInstance;
-}>('fetchOfferByID', async ({ id }, { extra: api }) => {
+}>(
+  'fetchOfferByID',
+  async ({ id }, { extra: api }) => {
     const { data: offerInfo } = await api.get<OfferType>(`${APIRoutes.Offers}/${id}`);
     const { data: nearby } = await api.get<OfferType[]>(`${APIRoutes.Offers}/${id}/nearby`);
     const { data: reviews } = await api.get<ReviewType[]>(`${APIRoutes.Reviews}/${id}`);
 
-    return { offerInfo, nearby, reviews };
+    return { offerInfo, rNearby: nearby, reviews };
   },
 );
 
@@ -35,7 +39,8 @@ export const fetchFavoriteOffersAction = createAsyncThunk<OfferType[], undefined
   state: State;
   extra: AxiosInstance;
 }>(
-  'fetchFavoriteOffers', async (_arg, { extra: api }) => {
+  'fetchFavoriteOffers',
+  async (_arg, { extra: api }) => {
     const { data } = await api.get<OfferType[]>(APIRoutes.FavoriteOffers);
     return data;
   },
@@ -50,14 +55,14 @@ export const setOfferFavoriteStatusAction = createAsyncThunk<OfferType, {
     state: State;
     extra: AxiosInstance;
   }>(
-  'setOfferFavoriteStatus',
-  async ({ id, favoriteStatus }, { dispatch, extra: api }) => {
-    const { data } = await api.post<OfferType>(`${APIRoutes.FavoriteOffers + id.toString()}/${Number(favoriteStatus)}`);
-    dispatch(fetchFavoriteOffersAction());
+    'setOfferFavoriteStatus',
+    async ({ id, favoriteStatus }, { dispatch, extra: api }) => {
+      const { data } = await api.post<OfferType>(`${APIRoutes.FavoriteOffers + id.toString()}/${Number(favoriteStatus)}`);
+      dispatch(fetchFavoriteOffersAction());
 
-    return data;
-  }
-);
+      return data;
+    }
+  );
 
 export const checkAuthAction = createAsyncThunk<void, undefined, {
   dispatch: AppDispatch;
@@ -96,29 +101,25 @@ export const logoutAction = createAsyncThunk<void, undefined, {
   },
 );
 
-export const sendOfferCommentAction = createAsyncThunk<ReviewType[], {
+export const sendOfferCommentAction = createAsyncThunk<ReviewType, {
   id: string;
   commentData: CommentData;
   resetFormData: () => void;
-},
-  {
-    dispatch: AppDispatch;
-    state: State;
-    extra: AxiosInstance;
-  }>(
-  'sendOfferComment',
-  async ({ id, resetFormData, commentData }, { extra: api }) => {
-    const { data } = await api.post<ReviewType[]>(APIRoutes.Reviews + id, commentData);
-    resetFormData();
-    return data;
-  });
+    }, {
+  dispatch: AppDispatch;
+  state: State;
+  extra: AxiosInstance;
+}>(
+    'sendOfferComment',
+    async ({ id, resetFormData, commentData }, { extra: api }) => {
+      const { data } = await api.post<ReviewType>(APIRoutes.Reviews + id, commentData);
+      resetFormData();
+      return data;
+    });
 
 export const clearErrorAction = createAsyncThunk(
   'clearError',
-  () => {
-    setTimeout(
-      () => { },
-      ERROR_TIMEOUT,
-    );
+  async () => {
+    await new Promise((resolve) => setTimeout(resolve, ERROR_TIMEOUT));
   },
 );
